@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+}
+.content{
+    height: 100vh;
+    display: block;
+  
+}
+
+.content-router{
+    height: 80%;
+   background-color: #42275e;     
+}
+.footer{
+    width:100%;
+    height: 10%;
+    position: absolute;
+    bottom:0;
+    background-color:rgb(55, 5, 77);
+}
+

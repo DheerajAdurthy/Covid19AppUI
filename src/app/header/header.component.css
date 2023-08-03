@@ -1,0 +1,45 @@
+*{
+    text-decoration: none;
+}
+.navbar{
+    background: rgb(55, 5, 77); 
+    font-family: calibri;
+     padding-right: 15px;
+     padding-left: 15px;
+     height: 12.5%;
+}
+.navdiv{
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+}
+.logo a{
+    font-size: 35px;
+     font-weight: 600; 
+     color: white;
+     text-decoration: none;
+}
+
+
+
+
+
+.b-a a{
+    margin-left: 825px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+.b1 a{
+    margin-left: 40px;
+    width:150px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+.b2 a{
+    margin-left: 35px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}

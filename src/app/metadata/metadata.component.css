@@ -1,0 +1,9 @@
+.read-more{
+    text-decoration: none;
+    color:white;
+    align-items: center;
+    background-color: rgb(55, 5, 77);
+    padding: 10px 20px ;
+    box-shadow: 1px 1px 1px 1px #ebe4e4;
+    border-radius: 2px 2px;
+}
