@@ -1,9 +1,14 @@
-<nav class="navbar">
+<nav class="navbar d-flex flex-row justify-content-center shadow">
     <div class="navdiv">
-        <img src="../../assets/sample-removebg-preview.png" style="width:70px;">
-        <div class="logo"><a routerLink="/covid-19">Covid19</a> </div>
-        <div class="b-a"><a href="#">About</a> </div>
-        <div class="b1"><a href="#">Register/Login</a></div>
-        <div class="b2"><a href="#">Logout</a></div>
+        <div class="d-flex flex-row align-items-center">
+            <img src="../../assets/sample-removebg-preview.png" style="width:70px;">
+            <div class="logo"><a routerLink="/covid-19">Covid19</a> </div>
+        </div>
+        <div class="d-flex flex-row justify-content-center align-items-center ">
+            <div class="b-a"><a href="#">About</a> </div>
+            <div class="b1" *ngIf="!loginStatus"><a [routerLink]="['/register']">Register/Login</a></div>
+            <div class="b2" *ngIf="loginStatus" (click)="userLogOut()" style="cursor: pointer;"><a>Logout</a></div>
+            <div class="b2" ><a href="#">Contact Us</a></div>
+        </div>
     </div>
 </nav>

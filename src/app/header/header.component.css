@@ -1,12 +1,11 @@
 *{
     text-decoration: none;
+    margin: 0;
 }
 .navbar{
     background: rgb(55, 5, 77); 
     font-family: calibri;
-     padding-right: 15px;
-     padding-left: 15px;
-     height: 12.5%;
+    height: 12.5%;
 }
 .navdiv{
     display: flex; 
@@ -14,16 +13,11 @@
     justify-content: space-between;
 }
 .logo a{
-    font-size: 35px;
-     font-weight: 600; 
+    font-size: 34px;
+     font-weight: bold; 
      color: white;
      text-decoration: none;
 }
-
-
-
-
-
 .b-a a{
     margin-left: 825px;
     text-decoration: none;
@@ -42,4 +36,16 @@
     text-decoration: none;
     color: white;
     font-size: 20px;
+}
+.b-a a:hover{
+    color: #c482e8;
+}
+.b2 a:hover{
+    color: #c482e8;
+}
+.b1 a:hover{
+    color: #c482e8;
+}
+.logo a:hover{
+    color: #c482e8;
 }

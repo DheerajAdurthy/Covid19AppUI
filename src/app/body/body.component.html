@@ -1,1 +1,22 @@
-
+<div class="container p-2">
+    <div class="row p-3 m-auto d-flex flex-column justify-content-center align-items-center">
+            <div class="d-flex flex-row justify-content-center align-items-center rounded-top p-2" style="background-color:rgb(55, 5, 77);width: 608px;">
+                <div class="text-center w-50 border-right rounded-right text-white" style="cursor: pointer;font-size: 20px;" (click)="showRegisterForm()" [ngClass]=" showRegForm ? 'showActive' : ''">
+                    <div class="p-3">
+                        Register
+                    </div>
+                </div>  
+                <div class="text-center w-50 text-white" style="cursor: pointer;font-size: 20px;" (click)="showLoginForm()" [ngClass]=" showLogForm ? 'showActive' : ''">
+                    <div class="p-3">
+                        Login
+                    </div>
+                </div>  
+            </div>
+            <div class="col-7">
+                <app-register *ngIf="showRegForm"></app-register>
+            </div>
+            <div class="col-7">
+                <app-login *ngIf="showLogForm"></app-login>
+            </div>
+    </div>
+</div>

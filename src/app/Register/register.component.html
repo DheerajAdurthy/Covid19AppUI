@@ -1,0 +1,36 @@
+<div class="m-auto p-4 shadow-lg rounded-bottom" style="background-color:rgb(55, 5, 77) ;">
+    <div class="alert alert-danger" role="alert" *ngIf="responseError">
+       {{errorRes}}
+      </div>
+      <div class="alert alert-success" role="alert" *ngIf="successRes">
+        {{successRes}}
+       </div>
+
+            <p class="h4 text-white text-center mb-1">Register</p>
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)">
+                <div class="form-group text-white">
+                    <label for="exampleInputEmail1">UserName</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  formControlName="username">
+                    <small id="emailHelp" class="form-text text-danger" *ngIf="registerForm.get('username').invalid && (registerForm.get('username').dirty || registerForm.get('username').touched)">Please Provide UserName</small>
+                  </div>
+                <div class="form-group text-white">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  <small id="emailHelp" class="form-text  text-danger" *ngIf="registerForm.get('email').invalid && (registerForm.get('email').dirty || registerForm.get('email').touched)">Please proivde an email</small>
+                </div>
+                <div class="form-group text-white">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+                  <small id="emailHelp" class="form-text  text-danger" *ngIf="registerForm.get('password').invalid && (registerForm.get('password').dirty || registerForm.get('password').touched)">Please Enter Ur Password</small>
+                </div>
+                <div class="form-group text-white">
+                    <label for="exampleInputPassword1">Confirm Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" formControlName="confirmPassword">
+                    <small id="emailHelp" class="form-text  text-danger" *ngIf="registerForm.get('confirmPassword').invalid && (registerForm.get('confirmPassword').dirty || registerForm.get('confirmPassword').touched)">Enter Confirmation Password</small>
+                  </div>
+                  <div class="text-center">
+                    <button type="submit" class="btn text-white border-white rounded" style="background-color:rgb(55, 5, 77) ;font-size: 17px;" [disabled]="registerForm.invalid">Submit</button>
+                  </div>
+              </form>
+        </div>

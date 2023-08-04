@@ -1,0 +1,23 @@
+
+<div class="m-auto p-5 shadow-lg rounded-bottom" style="background-color:rgb(55, 5, 77) ;">
+    <div class="alert alert-danger" role="alert" *ngIf="errorRes">
+        {{loginError}}
+       </div>
+            <p class="h4 text-white text-center mb-1">Login</p>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+                <div class="form-group text-white">
+                    <label for="exampleInputEmail1">UserName</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  formControlName="username">
+                    <small id="emailHelp" class="form-text text-danger" *ngIf="loginForm.get('username').invalid && (loginForm.get('username').dirty || loginForm.get('username').touched)">Please Provide UserName</small>
+                  </div>
+                <div class="form-group text-white">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+                  <small id="emailHelp" class="form-text text-danger" *ngIf="loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)">Please Enter Password</small>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn text-white border-white rounded" style="background-color:rgb(55, 5, 77) ;font-size: 17px;" [disabled]="loginForm.invalid">Submit</button>
+                  </div>              
+            </form>
+</div>
+ 
