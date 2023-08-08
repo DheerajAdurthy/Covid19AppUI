@@ -10,7 +10,16 @@
             <div class="b2" *ngIf="loginService.isLoggedIn()"  style="cursor: pointer;"><a [routerLink]="['/wishlist']">WishList</a></div>
             <div class="b2" *ngIf="loginService.isAdmin()"  style="cursor: pointer;"><a [routerLink]="['/addform']">Add Case</a></div>
             <div class="b2" *ngIf="loginService.isLoggedIn()" (click)="userLogOut()" style="cursor: pointer;"><a>Logout</a></div>
-            <div class="b2" ><a routerLink="contact">Contact Us</a></div>
+            <div class="dropdown ml-3" *ngIf="loginService.isLoggedIn()">
+                <div class=" text-white dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+                    <i class="fa fa-user" aria-hidden="true"></i> 
+                </div>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <p class="h6 dropdown-item font-weight-bold border-bottom" style="cursor: pointer;font-size: 22px;color:rgb(55, 5, 77) ;"><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{userName}}</p>
+                  <a class="dropdown-item"  style="font-size: 20px;" [routerLink]="['/wishlist']">WishList</a>
+                  <a class="dropdown-item"  style="font-size: 20px;" (click)="userLogOut()" style="cursor: pointer;">Logout</a>
+                </div>
+              </div>
         </div>
     </div>
 </nav>
