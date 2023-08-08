@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
           this.loginUser.userName=form.value.username
           this.loginUser.password=form.value.password
           this.loginService.loginUser(this.loginUser).subscribe(responseData=>{
-            console.log(responseData)
+            localStorage.setItem('username',responseData.userName)
           },(error)=>{
               this.errorRes=true
               this.loginError=error.error
