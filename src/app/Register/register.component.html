@@ -5,7 +5,6 @@
       <div class="alert alert-success" role="alert" *ngIf="successRes">
         {{successRes}}
        </div>
-
             <p class="h4 text-white text-center mb-1">Register</p>
             <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)">
                 <div class="form-group text-white">
@@ -24,11 +23,26 @@
                   <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
                   <small id="emailHelp" class="form-text  text-danger" *ngIf="registerForm.get('password').invalid && (registerForm.get('password').dirty || registerForm.get('password').touched)">Please Enter Ur Password</small>
                 </div>
-                <div class="form-group text-white">
+                <div class="form-group text-white mb-4">
                     <label for="exampleInputPassword1">Confirm Password</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" formControlName="confirmPassword">
                     <small id="emailHelp" class="form-text  text-danger" *ngIf="registerForm.get('confirmPassword').invalid && (registerForm.get('confirmPassword').dirty || registerForm.get('confirmPassword').touched)">Enter Confirmation Password</small>
+                    <small *ngIf="registerForm.errors?.['passwordmatcherror'] && (registerForm.get('confirmPassword').dirty) && !(registerForm.get('confirmPassword').invalid)"  class="text-danger">Password does not match </small>
+                </div>
+                <div class="form-group text-white">
+                  <div class="input-group mb-1">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text bg-primary text-white" for="inputGroupSelect01">Role</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01" formControlName="role">
+                      <option selected>Choose your role..</option>
+                      <option value="admin">admin</option>
+                      <option value="user">user</option>
+                    </select>
                   </div>
+                  <small id="emailHelp" class="form-text  text-danger" *ngIf="registerForm.get('role').invalid && (registerForm.get('role').dirty || registerForm.get('role').touched)">Please Confirm Your role</small>
+                  <small id="emailHelp" class="form-text  text-danger" *ngIf="roleFailure">{{roleFailure}}</small>
+              </div>
                   <div class="text-center">
                     <button type="submit" class="btn text-white border-white rounded" style="background-color:rgb(55, 5, 77) ;font-size: 17px;" [disabled]="registerForm.invalid">Submit</button>
                   </div>

@@ -3,4 +3,5 @@ export class RegisterUser{
    emailId:string;
    password:string;
    confirmPassword:string;
+   role:string
 }

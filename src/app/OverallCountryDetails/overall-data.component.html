@@ -1,0 +1,47 @@
+<div class="p-1 mt-3" *ngIf="!citiesNotFound" [hidden]="citiesNotFound">
+	<div class="alert alert-danger w-25" *ngIf="showWishListRemovedPopUP" style="position:absolute;top:5px;right: 0px;">
+           {{wishListdelResponse.value}}
+	</div>
+	<div class="alert alert-danger w-25" *ngIf="dupWishListRes">
+		{{dupWishListRes}}
+ </div>
+ <div class="alert alert-success text-succes w-25" *ngIf="showWishListAddPopUp" style="position:absolute;top:5px;right: 0px;">
+	{{wishListAddStatus.value}}
+</div>
+	<div  class="wishlist shadow-lg bg-light" style="width: 1360x ;height:50px;margin:10px 10px 10px 10px">
+		<i class="fa fa-bookmark" aria-hidden="true" (click)="toggleWishlist()" [ngClass]="showActive?'d-highlight':'d'" title="Add to WishList"></i>
+			<strong style="color:blueviolet ;font-size:30px;text-transform:uppercase;margin-left: 90px;">{{CountryDetails.countryName}}</strong>
+	</div>
+	<div class="display-bar m-auto" style="width: 1360px ;height:125px">
+			 <div  class="d-item" style="color:red;cursor: pointer;"><strong>CONFIRMED</strong><br><b>{{CountryDetails.totalCasesReported}}</b></div>
+			 <div class="d-item" style="color:rgb(100, 100, 222);cursor: pointer;" ><strong>ACTIVE</strong><br><b>{{CountryDetails.totalActiveCases}}</b></div>
+			 <div class="d-item" style="color:green;cursor: pointer;"><strong>RECOVERED</strong><br><b>{{CountryDetails.totalCuredCases}}</b></div>
+			 <div class="d-item" style="color:gray;cursor: pointer;"><strong>DECEASED</strong><br><b>{{CountryDetails.totalDeaths}}</b></div>
+	</div> 
+		<table class="table-striped m-auto shadow-lg rounded">
+			<thead>
+				<tr class=" rounded">
+					<th style="color: rgb(117, 25, 159);">CITYNAME</th>
+					<th class="text-primary">CONFIRMED</th>
+					<th class="text-warning">ACTIVE</th>
+					<th class="text-danger">TOTAL DEATHS</th>
+					<th class="text-success">CURED</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let data of cities">
+					
+					<td data-cell="state" style="cursor: pointer;" [routerLink]="['/casesInCities',data.cityId]">{{data.cityName}}</td>
+					<td data-cell="confirmed">{{data.totalCasesReported}}</td>
+					<td data-cell="active">{{data.totalActiveCases}}</td>
+					<td data-cell="recovered">{{data.totalDeaths}}</td>
+					<td data-cell="deceased">{{data.totalCuredCases}}</td>
+				</tr>
+			</tbody>
+		</table>
+			
+</div>
+
+<div *ngIf="citiesNotFound" class="text-center p-5 bg-light shadow font-weight-bold" style="font-style: calibri;">
+	<i class="fa fa-info-circle" aria-hidden="true"></i> {{citiesNotFound}}
+</div>

@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LoginStatusService } from './login-status.service';
+import { AddCaseService } from './add-case.service';
 
-describe('LoginStatusService', () => {
-  let service: LoginStatusService;
+describe('AddCaseService', () => {
+  let service: AddCaseService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(LoginStatusService);
+    service = TestBed.inject(AddCaseService);
   });
 
   it('should be created', () => {

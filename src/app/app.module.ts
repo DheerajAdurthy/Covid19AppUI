@@ -11,6 +11,16 @@ import {RegisterComponent} from './Register/register.component';
 import { LoginComponent } from './login/login.component'
 import {HttpClientModule} from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component'
+import {OverallDataComponent } from './OverallCountryDetails/overall-data.component';
+import { CasesInCitiesComponent } from './cases-in-cities/cases-in-cities.component';
+import { ContactComponent } from './contact/contact.component'
+import {CountryCardsComponent} from './Countries/country-cards.component';
+import { WishListComponent } from './wish-list/wish-list.component';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import {FormsModule} from '@angular/forms';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { AddCaseComponent } from './add-case/add-case.component'
+
 
 @NgModule({
   declarations: [
@@ -21,13 +31,22 @@ import { DashboardComponent } from './dashboard/dashboard.component'
     MetadataComponent,
     RegisterComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    OverallDataComponent,
+    CasesInCitiesComponent,
+    ContactComponent,
+    CountryCardsComponent,
+    WishListComponent,
+    LandingPageComponent,
+    AddCaseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2SearchPipeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

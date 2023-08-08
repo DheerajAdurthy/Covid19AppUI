@@ -1,0 +1,43 @@
+<div class="text-center">
+  <div class="search-container d-flex flex-row justify-content-center">
+    <form class="d-flex flex-row align-items-center">
+        <input type="text" placeholder="   Search with Country Name..." class="shadow rounded" name="search" #search [(ngModel)]="term">
+        <button type="submit" class="btn"><i class="fa fa-search"></i></button>
+      </form>
+</div>
+
+<div class="main">
+  <br>
+    <ul class="cards" >
+      <li class="cards_item" *ngFor="let item of demo | filter:term" >
+        <div class="card" style="  box-shadow: 5px 5px #888888;">
+          <div class="card_content">
+            <div class="data" [routerLink]="['/totalData',item.countryId]">
+                <div class="title-text"><h2 class="card_title" style="width:300px">{{item.countryName}}</h2></div> 
+                <table >
+                    <tr>
+                      <th class="card_text" style="width:300px; color: red;"><b>CONFIRMED</b></th>
+                      <td>{{item.totalActiveCases}}</td>
+                    </tr>
+                    <tr>
+                      <th class="card_text" style="width:300px;color:blue"><b>ACTIVE</b></th>
+                      <td>{{item.totalCasesReported}}</td>
+                    </tr>
+                    <tr>
+                      <th class="card_text" style="width:300px;color:green"><b>RECOVERED</b></th>
+                      <td>{{item.totalCuredCases}}</td>
+                    </tr>
+                    <tr>
+                        <th class="card_text" style="width:300px;color:black"><b>DECEASED</b></th>
+                        <td>{{item.totalDeaths}}</td>
+                      </tr>
+                  </table>
+            </div>
+        </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+  
+  

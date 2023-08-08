@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginStatusService } from '../Services/login-status.service';
 import {Observable,BehaviorSubject} from 'rxjs'
+import { LoginUserService } from '../Services/login-user.service';
 
 @Component({
   selector: 'app-header',
@@ -11,12 +12,12 @@ import {Observable,BehaviorSubject} from 'rxjs'
 export class HeaderComponent implements OnInit {
 
   loginStatus:boolean;
-  constructor(private loginStatusService:LoginStatusService) 
+  constructor(private loginStatusService:LoginStatusService,public loginService:LoginUserService) 
   { 
   }
 
   ngOnInit(){
-     this.loginStatusService.isLoggedIn.subscribe(res=>{
+    /*  this.loginStatusService.isLoggedIn.subscribe(res=>{
        if(res){
          if(localStorage.getItem('userToken')){
           this.loginStatus=true
@@ -25,10 +26,9 @@ export class HeaderComponent implements OnInit {
          this.loginStatus=false
        }
        console.log(this.loginStatus)
-     })
+     }) */
   }
   userLogOut(){
     this.loginStatusService.logOut()
-    this.loginStatusService.isLoggedIn.unsubscribe();
   }
 }

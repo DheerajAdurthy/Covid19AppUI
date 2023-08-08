@@ -32,12 +32,11 @@ export class LoginComponent implements OnInit {
           this.loginUser.userName=form.value.username
           this.loginUser.password=form.value.password
           this.loginService.loginUser(this.loginUser).subscribe(responseData=>{
-           this.responseDetails=responseData
-           console.log(this.responseDetails.userId)
-           this.userLogInService.login(this.responseDetails.userId,this.responseDetails.token);
+            console.log(responseData)
           },(error)=>{
               this.errorRes=true
               this.loginError=error.error
+              localStorage.clear()
           })
     }
   }

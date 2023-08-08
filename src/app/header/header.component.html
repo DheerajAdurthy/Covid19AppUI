@@ -2,13 +2,15 @@
     <div class="navdiv">
         <div class="d-flex flex-row align-items-center">
             <img src="../../assets/sample-removebg-preview.png" style="width:70px;">
-            <div class="logo"><a routerLink="/covid-19">Covid19</a> </div>
+            <div class="logo"><a routerLink="about">Covid19</a> </div>
         </div>
         <div class="d-flex flex-row justify-content-center align-items-center ">
-            <div class="b-a"><a href="#">About</a> </div>
-            <div class="b1" *ngIf="!loginStatus"><a [routerLink]="['/register']">Register/Login</a></div>
-            <div class="b2" *ngIf="loginStatus" (click)="userLogOut()" style="cursor: pointer;"><a>Logout</a></div>
-            <div class="b2" ><a href="#">Contact Us</a></div>
+            <div class="b-a"><a routerLink="/">Home</a> </div>
+            <div class="b1" *ngIf="!loginService.isLoggedIn()"><a [routerLink]="['/register']">Register/Login</a></div>
+            <div class="b2" *ngIf="loginService.isLoggedIn()"  style="cursor: pointer;"><a [routerLink]="['/wishlist']">WishList</a></div>
+            <div class="b2" *ngIf="loginService.isAdmin()"  style="cursor: pointer;"><a [routerLink]="['/addform']">Add Case</a></div>
+            <div class="b2" *ngIf="loginService.isLoggedIn()" (click)="userLogOut()" style="cursor: pointer;"><a>Logout</a></div>
+            <div class="b2" ><a routerLink="contact">Contact Us</a></div>
         </div>
     </div>
 </nav>
