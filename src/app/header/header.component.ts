@@ -12,8 +12,10 @@ import { LoginUserService } from '../Services/login-user.service';
 export class HeaderComponent implements OnInit {
 
   loginStatus:boolean;
+  userName:string;
   constructor(private loginStatusService:LoginStatusService,public loginService:LoginUserService) 
   { 
+    this.userName=localStorage.getItem('username')
   }
 
   ngOnInit(){
